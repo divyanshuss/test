@@ -1,0 +1,19 @@
+<script>
+function f1()
+{
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://192.168.29.203/cgi-bin/local.py?x="+document.getElementById('input').value,"true");
+    xhr.send();
+
+    xhr.onload = function ()
+    {
+        document.getElementById('out').innerHTML = xhr.responseText;
+    }
+}
+
+</script>
+
+<body id="main">
+<div> root@localhost:~# <input id="input"/><button onclick="f1();">Click me</button></div> 
+<pre><div id="out"> Here we have output . . . . </div></pre>
+</body>
